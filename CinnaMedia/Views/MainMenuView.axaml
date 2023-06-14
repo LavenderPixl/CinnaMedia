@@ -1,0 +1,52 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="CinnaMedia.Views.MainMenuView"
+			 >
+	<Panel>
+		<Grid ColumnDefinitions="1*, 1*, 1*, 1*" RowDefinitions="40, 30, 1*, 1*">
+			<!--<ExperimentalAcrylicBorder IsHitTestVisible="False">
+			<ExperimentalAcrylicBorder.Material>
+				<ExperimentalAcrylicMaterial
+					BackgroundSource="Digger"
+					TintColor="Black"
+					TintOpacity="1"
+					MaterialOpacity="0.65" />
+			</ExperimentalAcrylicBorder.Material>
+		</ExperimentalAcrylicBorder>-->
+			<TextBlock Text="CinnaMedia" Grid.Column="0" Grid.Row="1" Margin="10 0 0 0" FontSize="19"/>
+
+			<StackPanel VerticalAlignment="Top" HorizontalAlignment="Right" Orientation="Horizontal" Margin="0 0 10 0" Grid.Row="1" Grid.Column="3">
+				<Button Content="Add" Command="{Binding $parent[Window].DataContext.ChangeViewCommand}" CommandParameter="1" Width="70" HorizontalContentAlignment="Center" Margin="0 0 20 0" />
+				<Button Content="Search" Command="{Binding $parent[Window].DataContext.ChangeViewCommand}" CommandParameter="0" Width="70" HorizontalContentAlignment="Center"/>
+			</StackPanel>
+
+			<ScrollViewer VerticalScrollBarVisibility="Visible" Background="Gray" Grid.Row="2" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="4">
+				<ItemsControl Items="{Binding Movies}">
+					<ItemsControl.ItemsPanel>
+						<ItemsPanelTemplate>
+							<WrapPanel Orientation="Horizontal"/>
+						</ItemsPanelTemplate>
+					</ItemsControl.ItemsPanel>
+					<ItemsControl.ItemTemplate>
+						<DataTemplate>
+							<Border BorderBrush="Black" BorderThickness="2" Margin="20" Width="170" Padding="10 5 10 5">
+								<StackPanel>
+									<TextBlock Text="{Binding Name}" FontSize="15" TextWrapping="Wrap"/>
+									<Image Source="avares://CinnaMedia/Images/ee.png" Height="250" />
+									<StackPanel Orientation="Horizontal">
+
+										<TextBlock Text="Rating: " FontSize="13" TextWrapping="Wrap"/>
+										<TextBlock Text="{Binding Rating}" FontSize="13" TextWrapping="Wrap"/>
+									</StackPanel>
+								</StackPanel>
+							</Border>
+						</DataTemplate>
+					</ItemsControl.ItemTemplate>
+				</ItemsControl>
+			</ScrollViewer>
+		</Grid>
+	</Panel>
+</UserControl>
