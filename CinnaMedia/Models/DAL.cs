@@ -30,6 +30,9 @@ namespace CinnaMedia.Models
                 new Movie(0, "Spiderman - Far From Home", "avares://CinnaMedia/Images/SpidermanFFH.jpg" , null, null, 10),
                 new Movie(0, "Spiderman - Far From Home", "avares://CinnaMedia/Images/SpidermanFFH.jpg" , null, null, 10),
                 new Movie(0, "Spiderman - Far From Home", "avares://CinnaMedia/Images/SpidermanFFH.jpg" , null, null, 10),
+                new Movie(0, "Spiderman - Far From Home", "avares://CinnaMedia/Images/SpidermanFFH.jpg" , null, null, 10),
+                new Movie(0, "Spiderman - Far From Home", "avares://CinnaMedia/Images/SpidermanFFH.jpg" , null, null, 10),
+                new Movie(0, "Spiderman - Far From Home", "avares://CinnaMedia/Images/SpidermanFFH.jpg" , null, null, 10),
                 new Movie(0, "Spiderman - Far From Home", "avares://CinnaMedia/Images/SpidermanFFH.jpg" , null, null, 10)
             };
             return Movies;

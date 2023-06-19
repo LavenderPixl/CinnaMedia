@@ -13,7 +13,6 @@
     <None Remove="Images\8135 - Copy.png" />
     <None Remove="Images\8135.png" />
     <None Remove="Images\btn2.png" />
-    <None Remove="Images\IMG_0296.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,7 +21,6 @@
 
   <ItemGroup>
     <AvaloniaResource Include="Images\btn2.png" />
-    <AvaloniaResource Include="Images\IMG_0296.png" />
     <AvaloniaResource Include="Images\SpidermanFFH.jpg" />
   </ItemGroup>
 

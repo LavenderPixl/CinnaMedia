@@ -2,7 +2,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="630" d:DesignHeight="700"
+             mc:Ignorable="d" d:DesignWidth="1060" d:DesignHeight="710"
              x:Class="CinnaMedia.Views.MainMenuView"
 			 >
 	<Panel>
@@ -17,16 +17,31 @@
 		</ExperimentalAcrylicBorder>-->
 			
 		<Grid ColumnDefinitions="130, 160" HorizontalAlignment="Left">
-			<TextBlock Text="CinnaMedia" Grid.Column="0" Grid.Row="1" Margin="10 4 0 0" FontSize="19"/>
+			<TextBlock Text="CinnaMedia"  FontSize="18" 
+					   Foreground="#CBB6BB" 
+					   Grid.Column="0" Margin="10 4 0 0"/>
 
-			<StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Orientation="Horizontal" Grid.Column="1">
-				<Button Content="Add" Command="{Binding $parent[Window].DataContext.ChangeViewCommand}" CommandParameter="1" Width="70" Height="30" FontSize="14" HorizontalContentAlignment="Center" Margin="0 0 10 0" />
-				<Button Content="Search" Command="{Binding $parent[Window].DataContext.ChangeViewCommand}" CommandParameter="0" Width="70" Height="30" FontSize="14" HorizontalContentAlignment="Center"/>
+			<StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" 
+						Orientation="Horizontal" Grid.Column="1">
+				<Button Content="Add" 
+						Command="{Binding $parent[Window].DataContext.ChangeViewCommand}" 
+						CommandParameter="1" 
+						Width="70" Height="26" FontSize="13" 
+						HorizontalContentAlignment="Center" 
+						Margin="0 0 10 0" />
+				
+				<Button Content="Search" 
+						Command="{Binding $parent[Window].DataContext.ChangeViewCommand}" 
+						CommandParameter="0" 
+						Width="70" Height="26" FontSize="13" 
+						HorizontalContentAlignment="Center"/>
 			</StackPanel>
 		</Grid>
 
-		<Grid ColumnDefinitions="1*, 1*, 1*, 1*" RowDefinitions="40, 1*, 1*">
-			<ScrollViewer VerticalScrollBarVisibility="Auto" Background="Gray" Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="4">
+		<Grid ColumnDefinitions="1*, 1*, 1*, 1*" RowDefinitions="30, 1*, 1*">
+			<ScrollViewer VerticalScrollBarVisibility="Hidden" Background="#4C212A" 
+						  Grid.Row="1" Grid.RowSpan="2" 
+						  Grid.Column="0" Grid.ColumnSpan="4">
 				<ItemsControl Items="{Binding Movies}">
 					<ItemsControl.ItemsPanel>
 						<ItemsPanelTemplate>
@@ -35,7 +50,8 @@
 					</ItemsControl.ItemsPanel>
 					<ItemsControl.ItemTemplate>
 						<DataTemplate>
-							<Border BorderBrush="Black" BorderThickness="2" Margin="20" Width="170" Padding="10 5 10 5">
+							<Border BorderBrush="Black" BorderThickness="2" 
+									Margin="20" Width="170" Padding="10 5 10 5">
 								<StackPanel>
 									<TextBlock Text="{Binding Name}" FontSize="15" TextWrapping="Wrap"/>
 									<Image Source="avares://CinnaMedia/Images/btn2.png" Height="250" />

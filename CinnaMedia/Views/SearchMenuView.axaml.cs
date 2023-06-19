@@ -1,4 +1,5 @@
 using Avalonia.Controls;
+using CinnaMedia.ViewModels;
 
 namespace CinnaMedia.Views
 {
@@ -6,6 +7,7 @@ namespace CinnaMedia.Views
     {
         public SearchMenuView()
         {
+            DataContext = new SearchMenuViewModel();
             InitializeComponent();
         }
     }

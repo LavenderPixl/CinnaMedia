@@ -25,7 +25,8 @@ namespace CinnaMedia.ViewModels
         {
             new SearchMenuViewModel(),
             new EditMovieViewModel(),
-            new MovieInfoViewModel()
+            new MovieInfoViewModel(),
+            new MainMenuViewModel()
         };
 
         public void ChangeView(string i)

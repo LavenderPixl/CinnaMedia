@@ -2,7 +2,91 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             mc:Ignorable="d" d:DesignWidth="1060" d:DesignHeight="710"
+			 MinHeight="710"
              x:Class="CinnaMedia.Views.EditMovieView">
-  Welcome to Avalonia!
+
+	<Panel>
+		<Grid ColumnDefinitions="130, 160" HorizontalAlignment="Left">
+			<TextBlock Text="CinnaMedia" Foreground="#CBB6BB" 
+					   Grid.Column="0" Margin="10 4 0 0" 
+					   FontSize="18"/>
+
+			<StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Orientation="Horizontal" Grid.Column="1">
+				<Button Content="Go Back" 
+						Command="{Binding $parent[Window].DataContext.ChangeViewCommand}" 
+						CommandParameter="3" 
+						Width="70" Height="26" FontSize="13" 
+						HorizontalContentAlignment="Center" 
+						Margin="0 0 10 0" />
+				
+				<Button Content="Save and Go Back" 
+						Command="{Binding $parent[Window].DataContext.ChangeViewCommand}" 
+						CommandParameter="3" 
+						Width="130" Height="26" FontSize="13" 
+						HorizontalContentAlignment="Center"/>
+			</StackPanel>
+		</Grid>
+
+		<Grid Margin="0 30 0 0" Background="#4C212A" ColumnDefinitions="1*, 1*">
+
+			<!-- Image Side-->
+			<Grid Grid.Column="0" Margin="20 30 20 30" 
+				  RowDefinitions="1*, 16*">
+				<Button Content="Import Image" Command="{Binding}"
+						Grid.Row="0"
+						VerticalAlignment="Top"/>
+				
+				<Image Source="avares://CinnaMedia/Images/SpidermanFFH.jpg"
+					   VerticalAlignment="Center" 
+					   HorizontalAlignment="Left"
+					   Grid.Row="2"/>
+			</Grid>
+
+
+			<!-- Description and Review Side-->
+			<Grid Grid.Column="1" RowDefinitions="40, 1*, 1*" Margin="0 0 20 30">
+				<Grid  Grid.Row="1" RowDefinitions="1*, 9*">
+					<TextBlock Text="Description"
+							   FontSize="16"
+							   VerticalAlignment="Top"
+							   Grid.Row="0"/>
+
+					<TextBox VerticalAlignment="Top"
+							 Height="230"
+							 Grid.Row="1"/>
+				</Grid>
+
+				<Grid Grid.Row="2" ColumnDefinitions="6*, 1*" RowDefinitions="1*, 9*">
+					<TextBlock Text="Review and Rating" FontSize="16" Grid.Row="0"/>
+					<TextBox Height="280"
+							 Grid.Column="0"
+							 Grid.Row="1"
+							 VerticalAlignment="Top"
+							 TextWrapping="Wrap"/>
+
+					<ComboBox x:Name="Rating_ComboBox"
+							  HorizontalAlignment="Right"
+							  VerticalAlignment="Top"
+							  Grid.Column="1"
+							  Grid.Row="1"
+							  PlaceholderText="0/10">
+						<ComboBoxItem>1</ComboBoxItem>
+						<!---Better way? TODO:-->
+						<ComboBoxItem>2</ComboBoxItem>
+						<ComboBoxItem>3</ComboBoxItem>
+						<ComboBoxItem>4</ComboBoxItem>
+						<ComboBoxItem>5</ComboBoxItem>
+						<ComboBoxItem>6</ComboBoxItem>
+						<ComboBoxItem>7</ComboBoxItem>
+						<ComboBoxItem>8</ComboBoxItem>
+						<ComboBoxItem>9</ComboBoxItem>
+						<ComboBoxItem>10</ComboBoxItem>
+					</ComboBox>
+				</Grid>
+			</Grid>
+		</Grid>
+	</Panel>
+
+
 </UserControl>

@@ -7,6 +7,8 @@ namespace CinnaMedia.Views
     {
         public MovieInfoView()
         {
+            DataContext = new MovieInfoViewModel();
+
             InitializeComponent();
         }
     }
