@@ -1,4 +1,7 @@
-﻿using ReactiveUI;
+﻿using CinnaMedia.Models;
+using CinnaMedia.Objects;
+using ReactiveUI;
+using System.Linq;
 using System.Reactive;
 using System.Windows.Input;
 
@@ -6,8 +9,9 @@ namespace CinnaMedia.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
-        ViewModelBase content;
         public ReactiveCommand<string, Unit> ChangeViewCommand { get; }
+        ViewModelBase content;
+        Movie NewMovie;
         public ViewModelBase Content
         {
             get => content;
@@ -17,7 +21,6 @@ namespace CinnaMedia.ViewModels
         public MainWindowViewModel()
         {
             ChangeViewCommand = ReactiveCommand.Create<string>(ChangeView);
-
             Content = new MainMenuViewModel();
         }
 

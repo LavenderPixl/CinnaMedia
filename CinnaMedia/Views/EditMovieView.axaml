@@ -8,22 +8,22 @@
 
 	<Panel>
 		<Grid ColumnDefinitions="130, 160" HorizontalAlignment="Left">
-			<TextBlock Text="CinnaMedia" Foreground="#CBB6BB" 
-					   Grid.Column="0" Margin="10 4 0 0" 
+			<TextBlock Text="CinnaMedia" Foreground="#CBB6BB"
+					   Grid.Column="0" Margin="10 4 0 0"
 					   FontSize="18"/>
 
 			<StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Orientation="Horizontal" Grid.Column="1">
-				<Button Content="Go Back" 
-						Command="{Binding $parent[Window].DataContext.ChangeViewCommand}" 
-						CommandParameter="3" 
-						Width="70" Height="26" FontSize="13" 
-						HorizontalContentAlignment="Center" 
+				<Button Content="Main Menu"
+						Command="{Binding $parent[Window].DataContext.ChangeViewCommand}"
+						CommandParameter="3"
+						Width="90" Height="26" FontSize="13"
+						HorizontalContentAlignment="Center"
 						Margin="0 0 10 0" />
-				
-				<Button Content="Save and Go Back" 
-						Command="{Binding $parent[Window].DataContext.ChangeViewCommand}" 
-						CommandParameter="3" 
-						Width="130" Height="26" FontSize="13" 
+
+				<Button Content="Save and Go to Main Menu"
+						Command="{Binding SaveAndGo}"
+						CommandParameter="3"
+						Width="190" Height="26" FontSize="13"
 						HorizontalContentAlignment="Center"/>
 			</StackPanel>
 		</Grid>
@@ -31,14 +31,15 @@
 		<Grid Margin="0 30 0 0" Background="#4C212A" ColumnDefinitions="1*, 1*">
 
 			<!-- Image Side-->
-			<Grid Grid.Column="0" Margin="20 30 20 30" 
+			<Grid Grid.Column="0" Margin="20 30 20 30"
 				  RowDefinitions="1*, 16*">
-				<Button Content="Import Image" Command="{Binding}"
+				<Button Content="Import Image" 
+						Command="{Binding}"
 						Grid.Row="0"
 						VerticalAlignment="Top"/>
-				
+
 				<Image Source="avares://CinnaMedia/Images/SpidermanFFH.jpg"
-					   VerticalAlignment="Center" 
+					   VerticalAlignment="Center"
 					   HorizontalAlignment="Left"
 					   Grid.Row="2"/>
 			</Grid>
@@ -52,18 +53,26 @@
 							   VerticalAlignment="Top"
 							   Grid.Row="0"/>
 
-					<TextBox VerticalAlignment="Top"
+					<TextBox x:Name="Descrip_Box"
+							 Text="{Binding Descrip_Box}"
+		 					 VerticalAlignment="Top"
 							 Height="230"
-							 Grid.Row="1"/>
+							 Grid.Row="1"
+							 AcceptsReturn="True"/>
 				</Grid>
 
 				<Grid Grid.Row="2" ColumnDefinitions="6*, 1*" RowDefinitions="1*, 9*">
-					<TextBlock Text="Review and Rating" FontSize="16" Grid.Row="0"/>
-					<TextBox Height="280"
-							 Grid.Column="0"
-							 Grid.Row="1"
-							 VerticalAlignment="Top"
-							 TextWrapping="Wrap"/>
+					<TextBlock Text="Review and Rating" 
+							   FontSize="16" 
+							   Grid.Row="0"/>
+					
+					<TextBox x:Name="Review_Box"
+							 Text="{Binding Review_Box}"
+							 Height="280" Grid.Column="0" 
+							 Grid.Row="1" 
+							 VerticalAlignment="Top" 
+							 TextWrapping="Wrap"
+							 AcceptsReturn="True"/>
 
 					<ComboBox x:Name="Rating_ComboBox"
 							  HorizontalAlignment="Right"
@@ -87,6 +96,4 @@
 			</Grid>
 		</Grid>
 	</Panel>
-
-
 </UserControl>

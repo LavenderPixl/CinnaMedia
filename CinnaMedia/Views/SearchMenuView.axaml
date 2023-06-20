@@ -2,9 +2,26 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             mc:Ignorable="d" d:DesignWidth="1060" d:DesignHeight="710"
              x:Class="CinnaMedia.Views.SearchMenuView">
-	<Grid>
-        <TextBlock Text="Ooga"/>
-	</Grid>
+	<Panel>
+		<Grid ColumnDefinitions="130, 160" HorizontalAlignment="Left">
+			<TextBlock Text="CinnaMedia" Foreground="#CBB6BB"
+					   Grid.Column="0" Margin="10 4 0 0"
+					   FontSize="18"/>
+
+			<StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Orientation="Horizontal" Grid.Column="1">
+				<Button Content="Main Menu"
+						Command="{Binding $parent[Window].DataContext.ChangeViewCommand}"
+						CommandParameter="3"
+						Width="90" Height="26" FontSize="13"
+						HorizontalContentAlignment="Center"
+						Margin="0 0 10 0" />
+			</StackPanel>
+		</Grid>
+
+		<Grid Margin="0 30 0 0" Background="#4C212A" ColumnDefinitions="1*, 1*">
+
+		</Grid>
+	</Panel>
 </UserControl>

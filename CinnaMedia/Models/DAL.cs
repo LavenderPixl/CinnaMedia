@@ -12,6 +12,7 @@ namespace CinnaMedia.Models
     {
         private static ObservableCollection<Movie> movies = new();
         public static ObservableCollection<Movie> Movies { get; set; } = MovieDatabase();
+
         public static ObservableCollection<Movie> GetMovies()
         {
             movies.Clear();
@@ -26,17 +27,16 @@ namespace CinnaMedia.Models
         {
             Movies = new ObservableCollection<Movie>
             {
-                new Movie(0, "Spiderman - Far From Home", "avares://CinnaMedia/Images/SpidermanFFH.jpg" , null, null, 10),
-                new Movie(0, "Spiderman - Far From Home", "avares://CinnaMedia/Images/SpidermanFFH.jpg" , null, null, 10),
-                new Movie(0, "Spiderman - Far From Home", "avares://CinnaMedia/Images/SpidermanFFH.jpg" , null, null, 10),
-                new Movie(0, "Spiderman - Far From Home", "avares://CinnaMedia/Images/SpidermanFFH.jpg" , null, null, 10),
-                new Movie(0, "Spiderman - Far From Home", "avares://CinnaMedia/Images/SpidermanFFH.jpg" , null, null, 10),
-                new Movie(0, "Spiderman - Far From Home", "avares://CinnaMedia/Images/SpidermanFFH.jpg" , null, null, 10),
-                new Movie(0, "Spiderman - Far From Home", "avares://CinnaMedia/Images/SpidermanFFH.jpg" , null, null, 10),
-                new Movie(0, "Spiderman - Far From Home", "avares://CinnaMedia/Images/SpidermanFFH.jpg" , null, null, 10)
+                //new Movie(0, "Spiderman - Far From Home", "avares://CinnaMedia/Images/SpidermanFFH.jpg" , null, null, 10),
             };
             return Movies;
 
         }
+
+        //public void UpdateMovieDataBase(Movie movie)
+        //{
+            //Movies.Add(new Movie(movie.Id, movie.Name, movie.PosterPath, movie.Review, movie.Description, movie.Rating));
+        //}
+
     }
 }

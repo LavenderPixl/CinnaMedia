@@ -2,6 +2,63 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             mc:Ignorable="d" d:DesignWidth="1060" d:DesignHeight="710"
              x:Class="CinnaMedia.Views.MovieInfoView">
+
+	<Panel>
+		<Grid ColumnDefinitions="130, 160" HorizontalAlignment="Left">
+			<TextBlock Text="CinnaMedia" Foreground="#CBB6BB"
+					   Grid.Column="0" Margin="10 4 0 0"
+					   FontSize="18"/>
+
+			<StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Orientation="Horizontal" Grid.Column="1">
+				<Button Content="Main Menu"
+						Command="{Binding $parent[Window].DataContext.ChangeViewCommand}"
+						CommandParameter="3"
+						Width="90" Height="26" FontSize="13"
+						HorizontalContentAlignment="Center"
+						Margin="0 0 10 0" />
+
+				<Button Content="Edit"
+						Command="{Binding $parent[Window].DataContext.ChangeViewCommand}"
+						CommandParameter="1"
+						Width="70" Height="26" FontSize="13"
+						HorizontalContentAlignment="Center"/>
+			</StackPanel>
+		</Grid>
+
+		<Grid Margin="0 30 0 0" Background="#4C212A" ColumnDefinitions="1*, 1*">
+			<!-- Image Side-->
+			<Grid Grid.Column="0" Margin="20 30 20 30">
+				<Image Source="avares://CinnaMedia/Images/SpidermanFFH.jpg"
+					   VerticalAlignment="Center"
+					   HorizontalAlignment="Left"/>
+			</Grid>
+
+
+			<!-- Description and Review Side-->
+			<Grid Grid.Column="1" RowDefinitions="40, 1*, 1*" Margin="0 0 20 30">
+				<Grid  Grid.Row="1" RowDefinitions="1*, 9*">
+					<TextBlock Text="{Binding Movie.Description}"
+							   FontSize="16"
+							   VerticalAlignment="Top"
+							   Grid.Row="0"/>
+
+					<TextBlock Text="ddd"
+							   VerticalAlignment="Top"
+      						   Height="230"
+							   Grid.Row="1"/>
+				</Grid>
+
+				<Grid Grid.Row="2" ColumnDefinitions="6*, 1*" RowDefinitions="1*, 9*">
+					<TextBlock Text="Review and Rating" FontSize="16" Grid.Row="0"/>
+					<TextBox Height="280"
+							 Grid.Column="0"
+							 Grid.Row="1"
+							 VerticalAlignment="Top"
+							 TextWrapping="Wrap"/>
+				</Grid>
+			</Grid>
+		</Grid>
+	</Panel>
 </UserControl>
